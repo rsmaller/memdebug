@@ -1,10 +1,16 @@
 #pragma once
 #define MEM_DEBUG_H
-#define malloc malloc_db
-#define calloc calloc_db
-#define realloc realloc_db
+#ifdef DEBUG_DISABLE
+    #define _malloc malloc
+    #define _calloc calloc
+    #define _realloc realloc
+#else
+    #define _malloc malloc_db
+    #define _calloc calloc_db
+    #define _realloc realloc_db
+#endif
 #ifndef NULL
-    #define NULL (void *)0;
+    #define NULL ((void *)0);
 #endif
 #ifndef _INC_STDDEF
     #include <stddef.h>
