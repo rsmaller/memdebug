@@ -1,6 +1,6 @@
 #pragma once
 #define MEM_DEBUG_H
-#ifdef DEBUG_DISABLE
+#ifdef MEM_DEBUG_DISABLE
     #define _malloc malloc
     #define _calloc calloc
     #define _realloc realloc
@@ -16,16 +16,14 @@
     #include <stddef.h>
 #endif
 
-void *malloc_db(size_t bytes) {
+inline void *malloc_db(size_t bytes) {
     return NULL;
 }
 
-void *calloc_db(size_t count, size_t bytes) {
+inline void *calloc_db(size_t count, size_t bytes) {
     return NULL;
 }
 
-void *realloc_db(void *old, size_t newSize) {
+inline void *realloc_db(void *old, size_t newSize) {
     return NULL;
 }
-
-#undef NULL
