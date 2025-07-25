@@ -9,21 +9,19 @@
     #define _calloc calloc_db
     #define _realloc realloc_db
 #endif
-#ifndef NULL
-    #define NULL ((void *)0);
-#endif
+
 #ifndef _INC_STDDEF
     #include <stddef.h>
 #endif
 
 inline void *malloc_db(size_t bytes) {
-    return NULL;
+    return (void *)0;
 }
 
 inline void *calloc_db(size_t count, size_t bytes) {
-    return NULL;
+    return (void *)0;
 }
 
 inline void *realloc_db(void *old, size_t newSize) {
-    return NULL;
+    return (void *)0;
 }
